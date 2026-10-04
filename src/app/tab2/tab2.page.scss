@@ -21,3 +21,8 @@ ion-note {
   font-size: 1.25rem;
   font-weight: 700;
 }
+ion-searchbar,
+ion-segment {
+  max-width: 40rem;
+  margin: 0.5rem auto;
+}

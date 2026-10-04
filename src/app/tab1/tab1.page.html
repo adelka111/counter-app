@@ -4,6 +4,14 @@
   </ion-toolbar>
 </ion-header>
 
+  <ion-toast
+    [isOpen]="isSavedToastOpen()"
+    message="Počítadlo bylo uloženo."
+    [duration]="2000"
+    position="bottom"
+    (didDismiss)="isSavedToastOpen.set(false)"
+  ></ion-toast>
+
 <ion-content [fullscreen]="true" class="ion-padding">
   <app-counter
     heading="Nové počítadlo"
