@@ -16,7 +16,10 @@
     <div class="history-header">
       <p>
         Počet záznamů: {{ counterService.counters().length }}<br />
-        Součet hodnot: <strong>{{ total() }}</strong>
+        Součet hodnot: <strong>{{ total() }}</strong><br />
+        Kladné: <strong>{{ valueStats().positive }}</strong> ·
+        Záporné: <strong>{{ valueStats().negative }}</strong> ·
+        Nulové: <strong>{{ valueStats().zero }}</strong>
       </p>
       <ion-button
         color="danger"

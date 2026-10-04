@@ -59,6 +59,17 @@ export class Tab2Page implements OnInit {
       .reduce((sum, counter) => sum + counter.value, 0),
   );
 
+  // Individuální funkce – varianta C: počet kladných, záporných a nulových hodnot
+  readonly valueStats = computed(() => {
+    const counters = this.counterService.counters();
+
+    return {
+      positive: counters.filter((counter) => counter.value > 0).length,
+      negative: counters.filter((counter) => counter.value < 0).length,
+      zero: counters.filter((counter) => counter.value === 0).length,
+    };
+  });
+
   // Bonus 2 + 3: vyhledávání a řazení (původní data se nemění)
   readonly visibleCounters = computed(() => {
     const term = this.searchTerm().trim().toLowerCase();
